@@ -1,6 +1,5 @@
 package com.daniel.exercise.step_definitions;
 
-import app.App;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
@@ -31,7 +30,7 @@ public class Step_Definitions {
 
   @Then("Application output should be {string}")
   public void application_output_should_be(String expectedResult) {
-    String actualResult = App.assignment(
+    String actualResult = com.daniel.app.App.assignment(
             Exercise.exercise.getInput(),
             Exercise.exercise.getInputUnit(),
             Exercise.exercise.getTargetUnit(),

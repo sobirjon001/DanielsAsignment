@@ -1,9 +1,16 @@
-package app;
+package com.daniel.app;
 
 import java.util.Arrays;
 import java.util.List;
 
+
+
 public class App {
+
+  public static void main(String[] args) {
+    String response = "111.222";
+    System.out.println(response.matches("^\\d+\\.\\d?\\d?$"));
+  }
 
   private static final List<String> units = Arrays.asList(
           "Fahrenheit", "Kelvin", "Rankine", "Celsius"
@@ -19,7 +26,7 @@ public class App {
     if (!(units.contains(inputUnit) && units.contains(targetUnit))) return "invalid";
     if(!(
             response.matches("^\\d+\\.\\d?\\d?$") &&
-            inputNum.matches("^\\d+\\.\\d?\\d?$")
+                    inputNum.matches("^\\d+\\.\\d?\\d?$")
     )) return "incorrect";
 
     // Phase 2 creating expected result
