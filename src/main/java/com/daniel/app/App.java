@@ -10,6 +10,8 @@ public class App {
   public static void main(String[] args) {
     String response = "111.222";
     System.out.println(response.matches("^\\d+\\.\\d?\\d?$"));
+
+    System.out.println(assignment("70.0", "Fahrenheit", "Kelvin", "294.2611"));
   }
 
   private static final List<String> units = Arrays.asList(
@@ -25,8 +27,8 @@ public class App {
     // Phase 1 getting rid of invalid inputs
     if (!(units.contains(inputUnit) && units.contains(targetUnit))) return "invalid";
     if(!(
-            response.matches("^\\d+\\.\\d?\\d?$") &&
-                    inputNum.matches("^\\d+\\.\\d?\\d?$")
+            response.matches("^\\d+\\.\\d+$") &&
+                    inputNum.matches("^\\d+\\.\\d+$")
     )) return "incorrect";
 
     // Phase 2 creating expected result
@@ -55,7 +57,10 @@ public class App {
     }
 
     // Phase 3 assertion actual result with expected result
-    Double actualResult = Double.parseDouble(response);
+    Double actualResult = Math.round(Double.parseDouble(response) * 100.0) / 100.0;
+    expectedResult = Math.round(expectedResult * 100.0) / 100.0;
+//    System.out.println("actualResult = " + actualResult);
+//    System.out.println("expectedResult = " + expectedResult);
     if(!expectedResult.equals(actualResult)) return "incorrect";
     return "correct";
   }
