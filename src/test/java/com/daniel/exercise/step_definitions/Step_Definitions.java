@@ -35,6 +35,7 @@ public class Step_Definitions {
 
   @Then("Application output should be {string}")
   public void application_output_should_be(String expectedResult) {
+    System.out.println("Testing 1 feature");
     String actualResult = com.daniel.app.App.assignment(
             Exercise.exercise.getInput(),
             Exercise.exercise.getInputUnit(),
@@ -48,6 +49,7 @@ public class Step_Definitions {
 
   @Then("Application output should be {string} from Mock API for {int} test")
   public void application_output_should_be_from_mock_api(String expectedResult, int exercise ) {
+    System.out.println("Testing 2 feature");
     baseURI = "https://c18fa1a1-0807-4bbe-bc00-d779cfafc7d7.mock.pstmn.io";
 
     given()
@@ -64,5 +66,17 @@ public class Step_Definitions {
             .body("output", is(expectedResult))
     ;
 
+  }
+
+  @Given("print")
+  public void print() {
+    System.out.println("doing 3 feature");
+    Assert.assertTrue(true);
+  }
+
+  @Given("print2")
+  public void print2() {
+    System.out.println("Doing 4 feature");
+    Assert.assertTrue(true);
   }
 }

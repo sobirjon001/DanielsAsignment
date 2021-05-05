@@ -1,0 +1,9 @@
+{
+  "int": 1,
+  "string": "word",
+  "boolean" : true,
+  "data": {
+    "nested1": "word1",
+    "nested2": "word2"
+  }
+}

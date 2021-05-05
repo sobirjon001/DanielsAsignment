@@ -9,6 +9,8 @@ public class Mai {
   public static void main(String[] args) {
     int[] stock = new int[]{10, 12, 15, 49, 10, 30, 50, 30, 5};
 
+
+
 //    System.out.println("profit = " + getProfitAgainstAll(stock));
 //    System.out.println("stringPeriods(\"abcdabcdabcd\") = " + stringPeriods("abcdabcdabcd"));
 //
@@ -57,7 +59,6 @@ public class Mai {
 
   public static Object stringPeriods(String s) {
     String r = null;
-                  // 8 -> 4 -> 3
     for (int i = (s.length() / 2); i >=1; i--) {
       if(s.split(s.substring(0, i)).length == 0) return s.substring(0, i);
     }
