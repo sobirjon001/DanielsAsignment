@@ -19,8 +19,6 @@ import java.util.List;
 
 public class CreateBucket {
 
-  private static final String AccessKey = "AKIA57DJ442XFIRSMJYZ";
-  private static final String SecretAccessKey = "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";
 
   public static void main(String[] args) {
     AWSCredentials credentials = new BasicAWSCredentials(

@@ -25,4 +25,23 @@ public class Json_tests {
       System.out.println(e.getMessage());
     }
   }
+
+//  public void main1() {
+//    Driver.getDriver().get("http://practice.cybertekschool.com/dynamic_loading/2");
+//
+//    Wait<WebDriver> wait = new FluentWait<>(Driver.getDriver())
+//            .withTimeout(Duration.ofSeconds(30))
+//            .pollingEvery(Duration.ofSeconds(3))
+//            .ignoring(NoSuchElementException.class);
+//    WebElement button = wait.until(webDriver ->
+//            webDriver.findElement(By.xpath("//button[.='Start']"))
+//    );
+//    button.click();
+//
+//    WebElement foo = wait.until(webDriver ->
+//            webDriver.findElement(By.xpath("//h4[.='Hello World!']"))
+//    );
+//    String expected = "Hello World!";
+//    Assert.assertEquals(foo.getText(), expected);
+//  }
 }
