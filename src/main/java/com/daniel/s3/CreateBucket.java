@@ -10,6 +10,7 @@ import com.amazonaws.regions.Regions;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 import com.amazonaws.services.s3.model.*;
+import com.daniel.utils.ConfigurationReader;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
@@ -19,6 +20,9 @@ import java.util.List;
 
 public class CreateBucket {
 
+  // get your own keys and save in root folder as aws.properties
+  private static final String AccessKey = ConfigurationReader.getProperty("accessKey");
+  private static final String SecretAccessKey = ConfigurationReader.getProperty("secretAccessKey");
 
   public static void main(String[] args) {
     AWSCredentials credentials = new BasicAWSCredentials(
