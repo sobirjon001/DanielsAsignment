@@ -26,24 +26,24 @@ public class Knight2 {
   public static LinkedHashSet<String> getMoves() {
     ArrayList<ArrayList<int[]>> positionsLevels = new ArrayList<>();
     LinkedHashSet<String> result = new LinkedHashSet<>();
-    int[] startPosition = getRandomPosition();
+    int[] startPosition = getRandomPosition(); // first level
     positionsLevels.add(getPossiblePositions(startPosition));
-    while (positionsLevels.get(0).size() != 0) { // first level
+    while (positionsLevels.get(0).size() != 0) { // second level
       int[] newPosition = positionsLevels.get(0).get(0);
       positionsLevels.add(getPossiblePositions(newPosition));
-      while (positionsLevels.get(1).size() != 0) { // second level
+      while (positionsLevels.get(1).size() != 0) { // third level
         newPosition = positionsLevels.get(1).get(0);
         positionsLevels.add(getPossiblePositions(newPosition));
-        while (positionsLevels.get(2).size() != 0) { // third level
+        while (positionsLevels.get(2).size() != 0) { // fourth level
           newPosition = positionsLevels.get(2).get(0);
           positionsLevels.add(getPossiblePositions(newPosition));
-          while (positionsLevels.get(3).size() != 0) { // fourth level
+          while (positionsLevels.get(3).size() != 0) { // fifth level
             newPosition = positionsLevels.get(3).get(0);
             positionsLevels.add(getPossiblePositions(newPosition));
-            while (positionsLevels.get(4).size() != 0) { // fifth level
+            while (positionsLevels.get(4).size() != 0) { // sixth level
               newPosition = positionsLevels.get(4).get(0);
               positionsLevels.add(getPossiblePositions(newPosition));
-              while (positionsLevels.get(5).size() != 0) { // sixth level
+              while (positionsLevels.get(5).size() != 0) { // seventh level
                 newPosition = positionsLevels.get(5).get(0);
                 positionsLevels.add(getPossiblePositions(newPosition));
                 while (positionsLevels.get(6).size() != 0) { // eighth last level
