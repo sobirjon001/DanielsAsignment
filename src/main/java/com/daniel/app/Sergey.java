@@ -1,11 +1,15 @@
 package com.daniel.app;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Sergey {
 
   public static void main(String[] args) {
-    int a = 241426227;
-    int b = 5873;
-    System.out.println(test2(a));
+//    int a = 241426227;
+//    int b = 5873;
+//    System.out.println(test2(a));
+    System.out.println(test3(6));
   }
 
   public static boolean test(int n) {
@@ -30,5 +34,13 @@ public class Sergey {
       if(num.substring(0, i).contains(curNum + "")) return true;
     }
     return false;
+  }
+
+  public static boolean test3(int n) {
+    List<Integer> numList = new ArrayList<>();
+    for (int i = 1; i < n; i++) {
+      if (n % i == 0) numList.add(i);
+    }
+    return numList.stream().mapToInt(Integer::intValue).sum() == n;
   }
 }

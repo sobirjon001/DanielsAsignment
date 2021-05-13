@@ -16,17 +16,29 @@ public class Knight2 {
 
   public static void main(String[] args) {
 
-    LinkedHashSet<String> result = getMoves();
+    LinkedHashSet<String> result = getAllPossibleMoves();
 
     System.out.println("result = " + result);
     System.out.println("result.size() = " + result.size());
 
   }
 
-  public static LinkedHashSet<String> getMoves() {
+  public static LinkedHashSet<String> getAllPossibleMoves() {
+    LinkedHashSet<String> result = new LinkedHashSet<>();
+    for (int y = 0; y < board.length; y++) {
+      for (int x = 0; x < board[0].length; x++) {
+        if (board[y][x] == null) continue;
+        result.addAll(getMoves(y, x));
+      }
+    }
+    return result;
+  }
+
+  public static LinkedHashSet<String> getMoves(int y1, int x1) {
     ArrayList<ArrayList<int[]>> positionsLevels = new ArrayList<>();
     LinkedHashSet<String> result = new LinkedHashSet<>();
-    int[] startPosition = getRandomPosition(); // first level
+    int[] startPosition = new int[]{y1, x1}; // first level
+//    int[] startPosition = getRandomPosition(); // first level
     positionsLevels.add(getPossiblePositions(startPosition));
     while (positionsLevels.get(0).size() != 0) { // second level
       int[] newPosition = positionsLevels.get(0).get(0);
@@ -84,13 +96,10 @@ public class Knight2 {
   }
 
   private static boolean hasMoreThanTwoVowels(String w) {
-    List<String> usedVowels = new ArrayList<>();
+    int count = 0;
     for (String s : w.split("")) {
-      if (vowels.contains(s)) {
-        if (usedVowels.contains(s)) return false;
-        if (usedVowels.size() == 2) return true;
-        usedVowels.add(s);
-      }
+      if (vowels.contains(s)) count++;
+      if (count > 2) return true;
     }
     return false;
   }
